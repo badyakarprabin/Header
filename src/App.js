@@ -41,7 +41,7 @@ class App extends Component {
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
               <li class="nav-item nav-menu active ">
                 <a class="nav-link" href="#">
-                  Menu 1 <span class="sr-only">(current)</span>
+                  Menu 5 <span class="sr-only">(current)</span>
                 </a>
               </li>
               <MenuItem menuName="Menu 2" />
