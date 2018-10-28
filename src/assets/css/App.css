@@ -23,12 +23,8 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .navbar-brand {
@@ -37,12 +33,4 @@
 
 .nav-item {
   margin: 0px 10px 0px 10px;
-}
-
-.bg-color-red {
-  background: red;
-}
-
-.bg-color-blue {
-  background: blue;
 }
