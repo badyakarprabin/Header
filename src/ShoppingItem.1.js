@@ -1,32 +1,25 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
 import './App.css';
 import Body from 'Body';
 import Footer from 'Footer';
 import MenuItem from 'MenuItem';
-import ShoppingItemCollection from './ShoppingItemCollection';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import { getUsers, addUser } from '../src/services/getInfo';
+import ShoppingItemCollection from './ShoppingItemCollection';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false,
-      users: []
+      isLoggedIn: false
     };
   }
 
-  async componentWillMount() {
-    await addUser({ firstName: 'ram', lastName: 'sth' });
-    const result = await getUsers();
-    this.setState({ users: result });
-
-    // setInterval(()=>{
-    //   this.setState({isLoggedIn: true})
-    // }, 10000)
-  }
+  // componentDidMount(){
+  //   setInterval(()=>{
+  //     this.setState({isLoggedIn: true})
+  //   }, 10000)
+  // }
 
   render() {
     return (
@@ -51,27 +44,22 @@ class App extends Component {
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                 <li class="nav-item nav-menu active ">
-                  <Link className="nav-link" to="/">
-                    {/* <a class="nav-link" href="/"> */}
+                  <Link to="/" class="nav-link">
                     Menu 1 <span class="sr-only">(current)</span>
-                    {/* </a> */}
                   </Link>
                 </li>
-                <a href="#" target="_blank">
-                  <Link to="/items" target="_blank">
-                    <MenuItem menuName="Menu 2" />
-                  </Link>
-                </a>
+                <Link to="/items">
+                  <MenuItem menuName="Menu 2" />
+                </Link>
                 <MenuItem menuName="Menu 3" />
                 <MenuItem menuName="Menu 4" />
               </ul>
             </div>
           </nav>
-          <Route render={() => <Body app="Homepage" />} exact path="/" />
-          <Route component={ShoppingItemCollection} path="/items" />
-          {this.state.users.map(user => (
-            <div>{user.firstName}</div>
-          ))}
+          <Route path="/" exact render={() => <Body app="Homepage" />} />
+          <Route path="/items" component={ShoppingItemCollection} />
+          {/* <Body app="Homepage" /> */}
+          {/* <ShoppingItemCollection /> */}
           <Footer />
         </div>
       </Router>

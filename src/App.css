@@ -46,3 +46,23 @@
 .bg-color-blue {
   background: blue;
 }
+
+.shopping-item-wrapper {
+  width: 200px;
+  float: left;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.shopping-item-img {
+  background: pink;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.footer {
+  bottom: 0px;
+  left: 500px;
+  position: absolute;
+}
