@@ -26,7 +26,8 @@ class Body extends React.Component {
 
   componentDidMount() {
     //API call
-    console.log('componentdidmount');
+    console.log('im component did mount');
+    // alert('your page is loaded');
   }
 
   componentWillMount() {

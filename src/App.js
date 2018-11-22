@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css';
 import Body from 'Body';
+import Test from 'Test';
+
 import Footer from 'Footer';
 import MenuItem from 'MenuItem';
 import ShoppingItemCollection from './ShoppingItemCollection';
@@ -57,21 +59,22 @@ class App extends Component {
                     {/* </a> */}
                   </Link>
                 </li>
-                <a href="#" target="_blank">
-                  <Link to="/items" target="_blank">
-                    <MenuItem menuName="Menu 2" />
-                  </Link>
-                </a>
+                <Link to="/items" target="_blank">
+                  <MenuItem menuName="Menu 2" />
+                </Link>
                 <MenuItem menuName="Menu 3" />
-                <MenuItem menuName="Menu 4" />
+                <a href="/items">
+                  <MenuItem menuName="Menu 4" />
+                </a>
               </ul>
             </div>
           </nav>
           <Route render={() => <Body app="Homepage" />} exact path="/" />
-          <Route component={ShoppingItemCollection} path="/items" />
-          {this.state.users.map(user => (
+          <Route render={() => <ShoppingItemCollection />} path="/items" />
+          <Test />
+          {/* {this.state.users.map(user => (
             <div>{user.firstName}</div>
-          ))}
+          ))} */}
           <Footer />
         </div>
       </Router>
@@ -80,3 +83,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+/dashboaderrouter => componentWillMount
